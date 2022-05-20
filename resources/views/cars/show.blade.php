@@ -20,7 +20,7 @@
 
             <br>
             <a href="{{ route('cars.edit', compact('car'))}}" class="btn btn-warning">Modifica</a>
-            <form action="{{ route('cars.destroy', compact('car'))}}" method="POST" class="d-inline">
+            <form action="{{ route('cars.destroy', compact('car'))}}" method="POST" car-title="{{ucwords($car->numero_telaio)}}" class="d-inline blackhole">
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Elimina</button>
