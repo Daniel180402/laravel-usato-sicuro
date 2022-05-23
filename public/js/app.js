@@ -53648,18 +53648,18 @@ Vue.component("example-component", __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: "#app"
 });
-var blackHole = document.querySelectorAll(".blackhole");
-blackHole.forEach(function (singleForm) {
+/* const blackHole = document.querySelectorAll(".blackhole");
+blackHole.forEach((singleForm) => {
   singleForm.addEventListener("submit", function (event) {
     event.preventDefault(); //acchiappo l'invio del form
-
-    userConfirm = window.confirm("Are You Sure To Delate ".concat(this.getAttribute("car-numero-telaio")));
-
+    userConfirm = window.confirm(
+      `Are You Sure To Delate ${this.getAttribute("car-numero-telaio")}`
+    );
     if (userConfirm) {
       this.submit();
     }
   });
-});
+}); */
 
 /***/ }),
 

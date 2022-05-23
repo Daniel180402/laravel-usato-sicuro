@@ -1,9 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
-@section('main')
-<main class="container my-5">
+@section('content')
     <h1>Modifica auto</h1>
-    <form action="{{route('cars.update', compact('car'))}}" method="POST" class="d-flex flex-column g-2">
+    <form action="{{route('admin.cars.update', compact('car'))}}" method="POST" class="d-flex flex-column g-2">
         @csrf
         @method('PUT')
 
@@ -84,7 +83,6 @@
         <input type="checkbox" name="is_new" id="is_new" class="form-check" checked="{{ $car->is_new}}">
 
         <button type="submit" class=" align-self-start btn btn-primary mt-2">Modifica</button>
-        <a class="align-self-start btn btn-dark mt-2" href="{{ route('cars.index') }}">Torna indietro</a>
+        <a class="align-self-start btn btn-dark mt-2" href="{{ route('admin.cars.index') }}">Torna indietro</a>
     </form>
-</main>
 @endsection

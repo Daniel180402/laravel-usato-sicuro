@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Car;
 
-use Illuminate\Http\Request;
+class CarsController extends Controller
 
-class CarController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +18,7 @@ class CarController extends Controller
     public function index()
     {
         $cars= Car::all();
-        return view("cars.index", compact("cars"));
+        return view("admin.cars.index", compact("cars"));
     }
 
     /**
@@ -26,7 +28,7 @@ class CarController extends Controller
      */
     public function create()
     {
-        return view("cars.create");
+        return view("admin.cars.create");
     }
 
     /**
@@ -53,7 +55,7 @@ class CarController extends Controller
         $car->fill($data);
         $car->save();
 
-        return redirect()->route("cars.show", $car->id)->with ('message', 'Auto aggiornata con successo');
+        return redirect()->route("admin.cars.show", $car->id)->with ('message', 'Auto aggiornata con successo');
     }
 
     /**
@@ -65,7 +67,7 @@ class CarController extends Controller
     public function show($id)
     {
         $car = Car::findOrFail($id);
-        return view("cars.show", compact("car"));
+        return view("admin.cars.show", compact("car"));
     }
 
     /**
@@ -76,7 +78,7 @@ class CarController extends Controller
      */
     public function edit(Car $car)
     {
-        return view('cars.edit', compact('car'));
+        return view('admin.cars.edit', compact('car'));
     }
 
     /**
@@ -115,7 +117,7 @@ class CarController extends Controller
         $car->prezzo = $data["prezzo"];
         $car->save();
 
-        return redirect()->route("cars.show", $car->id);
+        return redirect()->route("admin.cars.show", $car->id);
     }
 
     /**
@@ -127,6 +129,7 @@ class CarController extends Controller
     public function destroy(Car $car)
     {
         $car->delete();
-        return redirect()->route("cars.index")->with('message', 'Car eliminata correttamente');
+        return redirect()->route("admin.cars.index")->with('message', 'Car eliminata correttamente');
     }
 }
+

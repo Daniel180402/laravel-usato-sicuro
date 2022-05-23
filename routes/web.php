@@ -13,12 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 })->name("home");
 
-Route::resource("cars", "CarController");
+Route::resource("cars", "CarController"); */
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+/* Route::get('/home', 'HomeController@index')->name('home'); */
+
+Route::middleware('auth')
+->namespace('Admin')
+->prefix('admin')
+->name('admin.')
+->group(function(){
+    Route::get('/', 'HomeController@index')->name('home');
+    Route::resource('cars', 'CarsController');
+});
+//sempre dopo mai prima, sovvrascrive
+Route::get('{any}', 'Guest\HomeController@index')->where('any', '.*');

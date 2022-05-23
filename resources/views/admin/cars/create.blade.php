@@ -1,9 +1,8 @@
-@extends('layouts.default')
+@extends('layouts.app')
 
-@section('main')
-<main class="container my-5">
+@section('content')
     <h1>Creazione nuova auto</h1>
-    <form action="{{route('cars.store')}}" method="POST" class="d-flex flex-column g-2">
+    <form action="{{route('admin.cars.store')}}" method="POST" class="d-flex flex-column g-2">
         @csrf
         <label for="numero_telaio">Numero di telaio</label>
         <input type="text" name="numero_telaio" id="numero_telaio" class=" form-control">
@@ -27,7 +26,6 @@
         <input type="text" name="prezzo" id="prezzo" class=" form-control">
 
         <button type="submit" class=" align-self-start btn btn-primary mt-2">Aggiungi</button>
-        <a class="align-self-start btn btn-dark mt-2" href="{{ route('cars.index') }}">Torna indietro</a>
+        <a class="align-self-start btn btn-dark mt-2" href="{{ route('admin.cars.index') }}">Torna indietro</a>
     </form>
-</main>
 @endsection

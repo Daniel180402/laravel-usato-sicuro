@@ -34,7 +34,7 @@ const app = new Vue({
   el: "#app",
 });
 
-const blackHole = document.querySelectorAll(".blackhole");
+/* const blackHole = document.querySelectorAll(".blackhole");
 blackHole.forEach((singleForm) => {
   singleForm.addEventListener("submit", function (event) {
     event.preventDefault(); //acchiappo l'invio del form
@@ -45,4 +45,4 @@ blackHole.forEach((singleForm) => {
       this.submit();
     }
   });
-});
+}); */
