@@ -53795,8 +53795,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! D:\Manuel\boolean_classe_55\exercises\laravel-usato-sicuro-2\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! D:\Manuel\boolean_classe_55\exercises\laravel-usato-sicuro-2\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! D:\gerol\boolean_class_55\exercises\laravel-usato-sicuro\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! D:\gerol\boolean_class_55\exercises\laravel-usato-sicuro\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

@@ -3,6 +3,12 @@
 @section('main')
 <main class="container my-5">
     <div>
+        <div class="row justify-content-center">
+            @if (session('message'))
+        <div class="alert alert-success col-12">
+            {{ session('message') }}
+        </div>
+        @endif
         <h1>{{ ucfirst($car->model)}} - {{ ucfirst($car->marca)}}</h1>
 
         <nav class="my-3 px-3">

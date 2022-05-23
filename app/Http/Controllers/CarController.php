@@ -37,8 +37,10 @@ class CarController extends Controller
      */
     public function store(Request $request)
     {
+
         $data = $request->all();
         $car = new Car();
+        /*
         $car->numero_telaio = $data["numero_telaio"];
         $car->model = $data["model"];
         $car->porte = $data["porte"];
@@ -46,9 +48,12 @@ class CarController extends Controller
         $car->marca = $data["marca"];
         $car->alimentazione = $data["alimentazione"];
         $car->prezzo = $data["prezzo"];
+        */
+
+        $car->fill($data);
         $car->save();
 
-        return redirect()->route("cars.show", $car->id);
+        return redirect()->route("cars.show", $car->id)->with ('message', 'Auto aggiornata con successo');
     }
 
     /**
